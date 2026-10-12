@@ -3,7 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laki Associates</title>
+  <title>Laki Associates — Certified Public Accountants (Demo)</title>
+  <meta name="description" content="Demo website for Laki Associates, a Dar es Salaam audit, tax and advisory practice: audit and assurance, tax advisory and financial consulting for public and private entities." />
+  <meta name="theme-color" content="#030711" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://nathankagoro.github.io/Laki-associates-demo-website/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Laki Associates (demo)" />
+  <meta property="og:title" content="Laki Associates — Audit Beyond Compliance" />
+  <meta property="og:description" content="Concept website for an audit, tax and advisory practice in Dar es Salaam. Design demo by Nathan Kagoro." />
+  <meta property="og:url" content="https://nathankagoro.github.io/Laki-associates-demo-website/" />
+  <meta property="og:image" content="https://nathankagoro.github.io/Laki-associates-demo-website/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Aerial black-and-white view of a city intersection" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Laki Associates — Audit Beyond Compliance" />
+  <meta name="twitter:description" content="Concept website for an audit, tax and advisory practice in Dar es Salaam. Design demo by Nathan Kagoro." />
+  <meta name="twitter:image" content="https://nathankagoro.github.io/Laki-associates-demo-website/assets/img/og-image.jpg" />
+
+  <script>document.documentElement.className += " js";</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,19 +33,25 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
-      <div class="brand">
-        <div class="logo">LA</div>
-        <div class="brand-text">
-          <div class="brand-name">LAKI ASSOCIATES</div>
-          <div class="brand-sub">CERTIFIED PUBLIC ACCOUNTANTS</div>
-        </div>
-      </div>
+      <a class="brand" href="#top" aria-label="Laki Associates, back to top">
+        <span class="logo" aria-hidden="true">LA</span>
+        <span class="brand-text">
+          <span class="brand-name">LAKI ASSOCIATES</span>
+          <span class="brand-sub">CERTIFIED PUBLIC ACCOUNTANTS</span>
+        </span>
+      </a>
 
-      <nav class="nav">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="#expertise">EXPERTISE</a>
         <a href="#portfolio">PORTFOLIO</a>
         <a href="#intelligence">INTELLIGENCE</a>
@@ -33,12 +60,13 @@
     </div>
   </header>
 
+  <main id="main">
   <!-- Hero -->
-  <section class="hero panel">
+  <section class="hero panel" id="top" aria-labelledby="hero-title">
     <div class="hero-left">
       <span class="pill">THE AUTHORITY STANDARD</span>
 
-      <h1>
+      <h1 id="hero-title">
         Audit Beyond<br />
         <span>Compliance.</span>
       </h1>
@@ -50,7 +78,7 @@
       </p>
 
       <div class="hero-actions">
-        <a href="mailto:consult@lakiassociates.co.tz?subject=Consultation%20Request" class="btn primary">REQUEST CONSULTATION</a>
+        <a href="mailto:hello@example.com?subject=Consultation%20Request%20(Laki%20Associates%20demo)" class="btn primary">REQUEST CONSULTATION</a>
         <a href="#portfolio" class="btn secondary">VIEW PORTFOLIO</a>
       </div>
     </div>
@@ -70,85 +98,36 @@
   </section>
 
   <!-- Trust Strip -->
-  <section class="trust panel">
+  <section class="trust panel" aria-labelledby="trust-title">
     <div class="trust-inner">
-      <div class="trust-label">TRUSTED BY NATIONAL PILLARS</div>
+      <h2 class="trust-label" id="trust-title">TRUSTED BY NATIONAL PILLARS</h2>
 
-      <div class="trust-marquee" aria-label="Trusted organizations">
-        <div class="trust-track">
-          <div class="trust-item">
-            <img src="assets/logos/ibm.svg" alt="NIDA logo placeholder" loading="lazy" />
-            <span>NIDA</span>
-          </div>
-          <div class="trust-item">
-            <img src="assets/logos/google.svg" alt="Ubungo logo placeholder" loading="lazy" />
-            <span>UBUNGO</span>
-          </div>
-          <div class="trust-item">
-            <img src="assets/logos/microsoft.svg" alt="KADCO logo placeholder" loading="lazy" />
-            <span>KADCO</span>
-          </div>
-          <div class="trust-item">
-            <img src="assets/logos/amazon.svg" alt="Itracom logo placeholder" loading="lazy" />
-            <span>ITRACOM</span>
-          </div>
-          <div class="trust-item">
-            <img src="assets/logos/fifth.svg" alt="PH-ASMA logo placeholder" loading="lazy" />
-            <span>PH-ASMA</span>
-          </div>
-          <div class="trust-item">
-            <img src="assets/logos/samsung.svg" alt="TANESCO logo placeholder" loading="lazy" />
-            <span>TANESCO</span>
-          </div>
-          <div class="trust-item">
-            <img src="assets/logos/nike.svg" alt="CRDB logo placeholder" loading="lazy" />
-            <span>CRDB</span>
-          </div>
-          <div class="trust-item">
-            <img src="assets/logos/linkedin.svg" alt="NMB logo placeholder" loading="lazy" />
-            <span>NMB</span>
-          </div>
-
-          <!-- Duplicate set enables seamless infinite marquee without visual jump. -->
-          <div class="trust-item" aria-hidden="true">
-            <img src="assets/logos/ibm.svg" alt="" loading="lazy" />
-            <span>NIDA</span>
-          </div>
-          <div class="trust-item" aria-hidden="true">
-            <img src="assets/logos/google.svg" alt="" loading="lazy" />
-            <span>UBUNGO</span>
-          </div>
-          <div class="trust-item" aria-hidden="true">
-            <img src="assets/logos/microsoft.svg" alt="" loading="lazy" />
-            <span>KADCO</span>
-          </div>
-          <div class="trust-item" aria-hidden="true">
-            <img src="assets/logos/amazon.svg" alt="" loading="lazy" />
-            <span>ITRACOM</span>
-          </div>
-          <div class="trust-item" aria-hidden="true">
-            <img src="assets/logos/fifth.svg" alt="" loading="lazy" />
-            <span>PH-ASMA</span>
-          </div>
-          <div class="trust-item" aria-hidden="true">
-            <img src="assets/logos/samsung.svg" alt="" loading="lazy" />
-            <span>TANESCO</span>
-          </div>
-          <div class="trust-item" aria-hidden="true">
-            <img src="assets/logos/nike.svg" alt="" loading="lazy" />
-            <span>CRDB</span>
-          </div>
-          <div class="trust-item" aria-hidden="true">
-            <img src="assets/logos/linkedin.svg" alt="" loading="lazy" />
-            <span>NMB</span>
-          </div>
-        </div>
+      <div class="trust-marquee">
+        <ul class="trust-track">
+          <li class="trust-item"><span class="wordmark">NIDA</span></li>
+          <li class="trust-item"><span class="wordmark">UBUNGO</span></li>
+          <li class="trust-item"><span class="wordmark">KADCO</span></li>
+          <li class="trust-item"><span class="wordmark">ITRACOM</span></li>
+          <li class="trust-item"><span class="wordmark">PH-ASMA</span></li>
+          <li class="trust-item"><span class="wordmark">TANESCO</span></li>
+          <li class="trust-item"><span class="wordmark">CRDB</span></li>
+          <li class="trust-item"><span class="wordmark">NMB</span></li>
+          <!-- Duplicate set enables a seamless loop; hidden from assistive tech. -->
+          <li class="trust-item" aria-hidden="true"><span class="wordmark">NIDA</span></li>
+          <li class="trust-item" aria-hidden="true"><span class="wordmark">UBUNGO</span></li>
+          <li class="trust-item" aria-hidden="true"><span class="wordmark">KADCO</span></li>
+          <li class="trust-item" aria-hidden="true"><span class="wordmark">ITRACOM</span></li>
+          <li class="trust-item" aria-hidden="true"><span class="wordmark">PH-ASMA</span></li>
+          <li class="trust-item" aria-hidden="true"><span class="wordmark">TANESCO</span></li>
+          <li class="trust-item" aria-hidden="true"><span class="wordmark">CRDB</span></li>
+          <li class="trust-item" aria-hidden="true"><span class="wordmark">NMB</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- Team -->
-  <section class="team panel">
+  <section class="team panel" aria-label="Partners">
     <div class="team-grid">
 
       <div class="team-card">
@@ -279,7 +258,8 @@
           <div class="detail-list">
             <div class="detail-card">
               <h3>Contact</h3>
-              <p>Email: <a href="mailto:consult@lakiassociates.co.tz">consult@lakiassociates.co.tz</a><br />Phone: <a href="tel:+255222110900">+255 22 211 0900</a></p>
+              <p>Email: <a href="mailto:hello@example.com?subject=Consultation%20Request%20(Laki%20Associates%20demo)">hello@example.com</a><br />Phone: <a href="tel:+255000000000">+255&nbsp;000&nbsp;000&nbsp;000</a></p>
+              <p class="demo-hint">Placeholder details for this demo.</p>
             </div>
             <div class="detail-card">
               <h3>Office</h3>
@@ -299,6 +279,16 @@
     </div>
   </section>
 
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">© <span id="year">2026</span> Laki Associates · Concept site</p>
+      <p class="footer-demo"><span class="demo-badge">Demo site</span> Names, contacts and client marks are illustrative placeholders.</p>
+      <a class="footer-back" href="https://nathankagoro.com">← nathankagoro.com</a>
+    </div>
+  </footer>
+
   <script>
     // Prevent browser from restoring previous scroll when refreshing/reopening the page.
     if ("scrollRestoration" in history) {
@@ -310,10 +300,75 @@
       if (window.location.hash) {
         history.replaceState(null, "", window.location.pathname + window.location.search);
       }
-
-      // Force a deterministic top start after assets and layout are ready.
       window.scrollTo(0, 0);
     });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu: disclosure pattern with Escape-to-close and focus return.
+    (function () {
+      var toggle = document.querySelector(".menu-toggle");
+      var nav = document.getElementById("site-nav");
+      var header = document.querySelector(".site-header");
+      var mq = window.matchMedia("(max-width: 860px)");
+
+      function setOpen(open, restoreFocus) {
+        toggle.setAttribute("aria-expanded", String(open));
+        header.classList.toggle("menu-open", open);
+        if (open) {
+          nav.querySelector("a").focus();
+        } else if (restoreFocus) {
+          toggle.focus();
+        }
+      }
+
+      toggle.addEventListener("click", function () {
+        setOpen(toggle.getAttribute("aria-expanded") !== "true", false);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+          setOpen(false, true);
+        }
+      });
+
+      nav.addEventListener("click", function (e) {
+        if (e.target.closest("a") && mq.matches) setOpen(false, false);
+      });
+
+      // Close when focus or a tap leaves the header.
+      document.addEventListener("click", function (e) {
+        if (!header.contains(e.target) && toggle.getAttribute("aria-expanded") === "true") setOpen(false, false);
+      });
+      header.addEventListener("focusout", function (e) {
+        if (mq.matches && e.relatedTarget && !header.contains(e.relatedTarget)) setOpen(false, false);
+      });
+
+      mq.addEventListener("change", function () { setOpen(false, false); });
+    })();
+
+    // Active-section highlight in the nav.
+    (function () {
+      if (!("IntersectionObserver" in window)) return;
+      var links = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+      var map = {};
+      links.forEach(function (a) {
+        var s = document.querySelector(a.getAttribute("href"));
+        if (s) map[s.id] = a;
+      });
+      var visible = {};
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { visible[en.target.id] = en.isIntersecting; });
+        var current = null;
+        Object.keys(map).forEach(function (id) { if (visible[id] && !current) current = id; });
+        links.forEach(function (a) {
+          var on = current && map[current] === a;
+          a.classList.toggle("is-active", !!on);
+          if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+        });
+      }, { rootMargin: "-45% 0px -50% 0px" });
+      Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+    })();
   </script>
 
 </body>
