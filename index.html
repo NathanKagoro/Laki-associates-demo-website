@@ -26,9 +26,8 @@
 
   <script>document.documentElement.className += " js";</script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/playfair-display-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -62,218 +61,251 @@
 
   <main id="main">
   <!-- Hero -->
-  <section class="hero panel" id="top" aria-labelledby="hero-title">
-    <div class="hero-left">
-      <span class="pill">THE AUTHORITY STANDARD</span>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-media" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 860px)" type="image/webp"
+                srcset="assets/img/hero-portrait-720.webp 720w, assets/img/hero-portrait-1080.webp 1080w"
+                sizes="100vw" />
+        <source type="image/webp"
+                srcset="assets/img/hero-800.webp 800w, assets/img/hero-1200.webp 1200w, assets/img/hero-1600.webp 1600w"
+                sizes="50vw" />
+        <img src="assets/img/hero-1200.jpg" width="1200" height="1200" alt=""
+             fetchpriority="high" decoding="async" />
+      </picture>
+    </div>
+
+    <div class="hero-copy">
+      <p class="eyebrow hero-eyebrow">The Authority Standard</p>
 
       <h1 id="hero-title">
-        Audit Beyond<br />
-        <span>Compliance.</span>
+        Audit beyond<br />
+        <em>compliance.</em>
       </h1>
 
-      <p>
+      <p class="hero-lead">
         We engineer financial clarity for Tanzania’s most complex
         parastatals and corporate entities. Precision, integrity,
         and strategic foresight.
       </p>
 
       <div class="hero-actions">
-        <a href="mailto:hello@example.com?subject=Consultation%20Request%20(Laki%20Associates%20demo)" class="btn primary">REQUEST CONSULTATION</a>
-        <a href="#portfolio" class="btn secondary">VIEW PORTFOLIO</a>
+        <a href="mailto:hello@example.com?subject=Consultation%20Request%20(Laki%20Associates%20demo)" class="btn primary">Request consultation <span class="btn-arrow" aria-hidden="true">→</span></a>
+        <a href="#portfolio" class="btn secondary">View portfolio</a>
       </div>
-    </div>
 
-    <div class="hero-right">
-      <div class="hero-image">
-        <picture>
-          <source type="image/webp"
-                  srcset="assets/img/hero-800.webp 800w, assets/img/hero-1600.webp 1600w"
-                  sizes="(max-width: 1100px) 100vw, 50vw" />
-          <img src="assets/img/hero-1200.jpg" width="1200" height="1200"
-               alt="Aerial black-and-white view of a city intersection lined with office blocks"
-               fetchpriority="high" decoding="async" />
-        </picture>
-      </div>
+      <dl class="hero-stats" aria-describedby="stats-note">
+        <div class="stat">
+          <dt>Years in practice</dt>
+          <dd><span class="count" data-to="25">25</span>+</dd>
+        </div>
+        <div class="stat">
+          <dt>Audits delivered</dt>
+          <dd><span class="count" data-to="400">400</span>+</dd>
+        </div>
+        <div class="stat">
+          <dt>Standards</dt>
+          <dd class="stat-word">IFRS · IPSAS</dd>
+        </div>
+      </dl>
+      <p class="stats-note" id="stats-note">Illustrative figures for this demo.</p>
     </div>
   </section>
 
   <!-- Trust Strip -->
-  <section class="trust panel" aria-labelledby="trust-title">
-    <div class="trust-inner">
-      <h2 class="trust-label" id="trust-title">TRUSTED BY NATIONAL PILLARS</h2>
-
-      <div class="trust-marquee">
-        <ul class="trust-track">
-          <li class="trust-item"><span class="wordmark">NIDA</span></li>
-          <li class="trust-item"><span class="wordmark">UBUNGO</span></li>
-          <li class="trust-item"><span class="wordmark">KADCO</span></li>
-          <li class="trust-item"><span class="wordmark">ITRACOM</span></li>
-          <li class="trust-item"><span class="wordmark">PH-ASMA</span></li>
-          <li class="trust-item"><span class="wordmark">TANESCO</span></li>
-          <li class="trust-item"><span class="wordmark">CRDB</span></li>
-          <li class="trust-item"><span class="wordmark">NMB</span></li>
-          <!-- Duplicate set enables a seamless loop; hidden from assistive tech. -->
-          <li class="trust-item" aria-hidden="true"><span class="wordmark">NIDA</span></li>
-          <li class="trust-item" aria-hidden="true"><span class="wordmark">UBUNGO</span></li>
-          <li class="trust-item" aria-hidden="true"><span class="wordmark">KADCO</span></li>
-          <li class="trust-item" aria-hidden="true"><span class="wordmark">ITRACOM</span></li>
-          <li class="trust-item" aria-hidden="true"><span class="wordmark">PH-ASMA</span></li>
-          <li class="trust-item" aria-hidden="true"><span class="wordmark">TANESCO</span></li>
-          <li class="trust-item" aria-hidden="true"><span class="wordmark">CRDB</span></li>
-          <li class="trust-item" aria-hidden="true"><span class="wordmark">NMB</span></li>
-        </ul>
-      </div>
+  <section class="trust" aria-labelledby="trust-title">
+    <h2 class="trust-label" id="trust-title">Trusted by national pillars</h2>
+    <div class="trust-marquee">
+      <ul class="trust-track">
+        <li class="trust-item"><span class="wordmark">NIDA</span></li>
+        <li class="trust-item"><span class="wordmark">UBUNGO</span></li>
+        <li class="trust-item"><span class="wordmark">KADCO</span></li>
+        <li class="trust-item"><span class="wordmark">ITRACOM</span></li>
+        <li class="trust-item"><span class="wordmark">PH-ASMA</span></li>
+        <li class="trust-item"><span class="wordmark">TANESCO</span></li>
+        <li class="trust-item"><span class="wordmark">CRDB</span></li>
+        <li class="trust-item"><span class="wordmark">NMB</span></li>
+        <!-- Duplicate set enables a seamless loop; hidden from assistive tech. -->
+        <li class="trust-item" aria-hidden="true"><span class="wordmark">NIDA</span></li>
+        <li class="trust-item" aria-hidden="true"><span class="wordmark">UBUNGO</span></li>
+        <li class="trust-item" aria-hidden="true"><span class="wordmark">KADCO</span></li>
+        <li class="trust-item" aria-hidden="true"><span class="wordmark">ITRACOM</span></li>
+        <li class="trust-item" aria-hidden="true"><span class="wordmark">PH-ASMA</span></li>
+        <li class="trust-item" aria-hidden="true"><span class="wordmark">TANESCO</span></li>
+        <li class="trust-item" aria-hidden="true"><span class="wordmark">CRDB</span></li>
+        <li class="trust-item" aria-hidden="true"><span class="wordmark">NMB</span></li>
+      </ul>
     </div>
   </section>
 
   <!-- Team -->
-  <section class="team panel" aria-label="Partners">
-    <div class="team-grid">
-
-      <div class="team-card">
-        <div class="team-image img-1"></div>
-        <div class="team-meta role">MANAGING PARTNER</div>
-        <div class="team-name">CPA. Godfrey Laki</div>
-        <div class="team-sub">FCCA, MBA Finance</div>
+  <section class="team" aria-labelledby="team-title">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">The Partners</p>
+        <h2 id="team-title">Senior judgement on <em>every</em> engagement.</h2>
+      </header>
+      <div class="team-grid">
+        <article class="team-card reveal">
+          <div class="team-image img-1"><span class="photo" aria-hidden="true"></span></div>
+          <p class="team-meta">Managing Partner</p>
+          <h3 class="team-name">CPA. Godfrey Laki</h3>
+          <p class="team-sub">FCCA, MBA Finance</p>
+        </article>
+        <article class="team-card reveal">
+          <div class="team-image img-2"><span class="photo" aria-hidden="true"></span></div>
+          <p class="team-meta accent">Senior Tax Partner</p>
+          <h3 class="team-name">CPA. Sarah M.</h3>
+          <p class="team-sub">Advocate, Tax Consultant</p>
+        </article>
+        <article class="team-card reveal">
+          <div class="team-image img-3"><span class="photo" aria-hidden="true"></span></div>
+          <p class="team-meta">Audit Lead</p>
+          <h3 class="team-name">CPA. John D.</h3>
+          <p class="team-sub">CISA, Risk Assurance</p>
+        </article>
       </div>
-
-      <div class="team-card">
-        <div class="team-image img-2"></div>
-        <div class="team-meta role accent">SENIOR TAX PARTNER</div>
-        <div class="team-name">CPA. Sarah M.</div>
-        <div class="team-sub">Advocate, Tax Consultant</div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-image img-3"></div>
-        <div class="team-meta role">AUDIT LEAD</div>
-        <div class="team-name">CPA. John D.</div>
-        <div class="team-sub">CISA, Risk Assurance</div>
-      </div>
-
     </div>
   </section>
 
   <!-- Expertise -->
-  <section class="details panel" id="expertise">
-    <div class="details-inner">
-      <div class="section-shell">
-        <div class="section-copy">
-          <div class="details-header">EXPERTISE</div>
-          <h2>Core Services</h2>
+  <section class="details" id="expertise" aria-labelledby="expertise-title">
+    <div class="wrap section-shell">
+      <div class="section-copy">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-num">01</span>Expertise</p>
+          <h2 id="expertise-title">Core services</h2>
           <p class="details-lead">Assurance frameworks tailored for regulated entities, growth-stage firms, and institutions handling complex reporting obligations.</p>
-          <div class="detail-list">
-            <article class="detail-card">
-              <h3>Audit and Assurance</h3>
-              <p>Statutory audits, internal controls review, and risk-based assurance engagements for public and private entities.</p>
-            </article>
-            <article class="detail-card">
-              <h3>Tax Advisory</h3>
-              <p>Corporate tax planning, compliance support, and representation on tax matters with national revenue authorities.</p>
-            </article>
-            <article class="detail-card">
-              <h3>Financial Consulting</h3>
-              <p>Budgeting, cash flow strategy, and performance reporting frameworks designed for board-level decision making.</p>
-            </article>
-          </div>
-        </div>
-        <div class="section-media">
-          <div class="placeholder-image expertise-image"></div>
-          <p class="media-note">Placeholder visual: executive audit planning session, boardroom setting, monochrome tone.</p>
-        </div>
+        </header>
+        <ol class="detail-list">
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">i.</span>
+            <h3>Audit and Assurance</h3>
+            <p>Statutory audits, internal controls review, and risk-based assurance engagements for public and private entities.</p>
+          </li>
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">ii.</span>
+            <h3>Tax Advisory</h3>
+            <p>Corporate tax planning, compliance support, and representation on tax matters with national revenue authorities.</p>
+          </li>
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">iii.</span>
+            <h3>Financial Consulting</h3>
+            <p>Budgeting, cash flow strategy, and performance reporting frameworks designed for board-level decision making.</p>
+          </li>
+        </ol>
       </div>
+      <figure class="section-media reveal">
+        <div class="media-frame" data-num="01"><span class="photo expertise-image" aria-hidden="true"></span></div>
+        <figcaption class="media-note"><span>Fig. 01</span> Audit planning session, boardroom</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section class="details panel alt" id="portfolio">
-    <div class="details-inner">
-      <div class="section-shell">
-        <div class="section-copy">
-          <div class="details-header">PORTFOLIO</div>
-          <h2>Representative Engagements</h2>
+  <!-- Portfolio (ivory) -->
+  <section class="details light" id="portfolio" aria-labelledby="portfolio-title">
+    <div class="wrap section-shell flip">
+      <div class="section-copy">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-num">02</span>Portfolio</p>
+          <h2 id="portfolio-title">Representative engagements</h2>
           <p class="details-lead">Selected assignments reflecting measurable outcomes, stronger governance, and better reporting quality.</p>
-          <div class="detail-list">
-            <article class="detail-card">
-              <h3>Public Sector Audit Program</h3>
-              <p>Delivered multi-entity audit execution for regional public institutions with improved reporting timelines.</p>
-            </article>
-            <article class="detail-card">
-              <h3>Tax Health Assessment</h3>
-              <p>Completed end-to-end tax diagnostics for a manufacturing group and reduced compliance exposure.</p>
-            </article>
-            <article class="detail-card">
-              <h3>Governance Controls Review</h3>
-              <p>Designed and validated governance controls for a transport authority with measurable risk reduction.</p>
-            </article>
-          </div>
-        </div>
-        <div class="section-media">
-          <div class="placeholder-image portfolio-image"></div>
-          <p class="media-note">Placeholder visual: modern infrastructure or transport asset with finance professionals on-site.</p>
-        </div>
+        </header>
+        <ol class="detail-list">
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">Public sector</span>
+            <h3>Public Sector Audit Program</h3>
+            <p>Delivered multi-entity audit execution for regional public institutions with improved reporting timelines.</p>
+          </li>
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">Manufacturing</span>
+            <h3>Tax Health Assessment</h3>
+            <p>Completed end-to-end tax diagnostics for a manufacturing group and reduced compliance exposure.</p>
+          </li>
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">Transport</span>
+            <h3>Governance Controls Review</h3>
+            <p>Designed and validated governance controls for a transport authority with measurable risk reduction.</p>
+          </li>
+        </ol>
       </div>
+      <figure class="section-media reveal">
+        <div class="media-frame" data-num="02"><span class="photo portfolio-image" aria-hidden="true"></span></div>
+        <figcaption class="media-note"><span>Fig. 02</span> Infrastructure assurance, on site</figcaption>
+      </figure>
     </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="quote" aria-label="Client testimonial (placeholder)">
+    <figure class="wrap quote-inner reveal">
+      <span class="quote-mark" aria-hidden="true">“</span>
+      <blockquote>
+        <p>Laki brought a rigour to our year-end that our board had not seen before, and a candour we now rely on.</p>
+      </blockquote>
+      <figcaption>
+        <span class="quote-who">Chief Finance Officer</span>
+        <span class="quote-org">National public institution · placeholder testimonial</span>
+      </figcaption>
+    </figure>
   </section>
 
   <!-- Intelligence -->
-  <section class="details panel" id="intelligence">
-    <div class="details-inner">
-      <div class="section-shell">
-        <div class="section-copy">
-          <div class="details-header">INTELLIGENCE</div>
-          <h2>Insights and Publications</h2>
+  <section class="details" id="intelligence" aria-labelledby="intelligence-title">
+    <div class="wrap section-shell">
+      <div class="section-copy">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-num">03</span>Intelligence</p>
+          <h2 id="intelligence-title">Insights and publications</h2>
           <p class="details-lead">Decision-grade thinking for executives, audit committees, and financial leadership teams.</p>
-          <div class="detail-list">
-            <article class="detail-card">
-              <h3>Quarterly Tax Update</h3>
-              <p>Practical guidance on policy changes, filing obligations, and planning opportunities for management teams.</p>
-            </article>
-            <article class="detail-card">
-              <h3>Audit Readiness Brief</h3>
-              <p>A concise checklist for year-end preparation, controls evidence, and documentation quality standards.</p>
-            </article>
-            <article class="detail-card">
-              <h3>Board Reporting Note</h3>
-              <p>Recommended structures for audit committee reports, variance analysis, and strategic financial KPIs.</p>
-            </article>
-          </div>
-        </div>
-        <div class="section-media">
-          <div class="placeholder-image intelligence-image"></div>
-          <p class="media-note">Placeholder visual: analyst reviewing dashboards and annual reports under natural light.</p>
-        </div>
+        </header>
+        <ol class="detail-list">
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">Briefing</span>
+            <h3>Quarterly Tax Update</h3>
+            <p>Practical guidance on policy changes, filing obligations, and planning opportunities for management teams.</p>
+          </li>
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">Checklist</span>
+            <h3>Audit Readiness Brief</h3>
+            <p>A concise checklist for year-end preparation, controls evidence, and documentation quality standards.</p>
+          </li>
+          <li class="detail-card reveal">
+            <span class="card-num" aria-hidden="true">Guidance note</span>
+            <h3>Board Reporting Note</h3>
+            <p>Recommended structures for audit committee reports, variance analysis, and strategic financial KPIs.</p>
+          </li>
+        </ol>
       </div>
+      <figure class="section-media reveal">
+        <div class="media-frame" data-num="03"><span class="photo intelligence-image" aria-hidden="true"></span></div>
+        <figcaption class="media-note"><span>Fig. 03</span> Analysis and annual reporting</figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="details consult panel alt" id="consult">
-    <div class="details-inner">
-      <div class="section-shell">
-        <div class="section-copy">
-          <div class="details-header">CONSULT</div>
-          <h2>Business Details</h2>
-          <p class="details-lead">Speak with our team for audits, tax strategy, controls review, and finance transformation support.</p>
-          <div class="detail-list">
-            <div class="detail-card">
-              <h3>Contact</h3>
-              <p>Email: <a href="mailto:hello@example.com?subject=Consultation%20Request%20(Laki%20Associates%20demo)">hello@example.com</a><br />Phone: <a href="tel:+255000000000">+255&nbsp;000&nbsp;000&nbsp;000</a></p>
-              <p class="demo-hint">Placeholder details for this demo.</p>
-            </div>
-            <div class="detail-card">
-              <h3>Office</h3>
-              <p>4th Floor, Uhuru Financial Tower<br />Samora Avenue, Dar es Salaam, Tanzania</p>
-            </div>
-            <div class="detail-card">
-              <h3>Working Hours</h3>
-              <p>Monday to Friday: 08:00 - 17:30<br />Saturday: 09:00 - 13:00</p>
-            </div>
-          </div>
+  <section class="consult" id="consult" aria-labelledby="consult-title">
+    <div class="wrap">
+      <header class="consult-head reveal">
+        <p class="eyebrow"><span class="eyebrow-num">04</span>Consult</p>
+        <h2 id="consult-title">Let’s talk about your next <em>reporting cycle.</em></h2>
+        <p class="details-lead">Speak with our team for audits, tax strategy, controls review, and finance transformation support.</p>
+        <a href="mailto:hello@example.com?subject=Consultation%20Request%20(Laki%20Associates%20demo)" class="btn primary gold">Request consultation <span class="btn-arrow" aria-hidden="true">→</span></a>
+      </header>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Contact</h3>
+          <p><a href="mailto:hello@example.com?subject=Consultation%20Request%20(Laki%20Associates%20demo)">hello@example.com</a><br /><a href="tel:+255000000000">+255&nbsp;000&nbsp;000&nbsp;000</a></p>
+          <p class="demo-hint">Placeholder details for this demo.</p>
         </div>
-        <div class="section-media">
-          <div class="placeholder-image consult-image"></div>
-          <p class="media-note">Featured visual: client reception lounge with concierge desk and branded interior lighting.</p>
+        <div class="contact-card reveal">
+          <h3>Office</h3>
+          <p>4th Floor, Uhuru Financial Tower<br />Samora Avenue, Dar es Salaam</p>
+        </div>
+        <div class="contact-card reveal">
+          <h3>Hours</h3>
+          <p>Mon – Fri · 08:00 – 17:30<br />Saturday · 09:00 – 13:00</p>
         </div>
       </div>
     </div>
@@ -345,6 +377,66 @@
       });
 
       mq.addEventListener("change", function () { setOpen(false, false); });
+    })();
+
+    // Motion: staggered reveals, stat counters and a gentle hero parallax.
+    // Everything is skipped under prefers-reduced-motion; content is visible by default.
+    (function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !("IntersectionObserver" in window)) return;
+
+      var root = document.documentElement;
+      root.classList.add("motion");
+
+      // Stagger siblings that reveal together.
+      document.querySelectorAll(".detail-list, .team-grid, .contact-grid").forEach(function (list) {
+        Array.prototype.forEach.call(list.children, function (el, i) {
+          el.style.setProperty("--i", i);
+        });
+      });
+
+      var revealIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            revealIO.unobserve(en.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach(function (el) { revealIO.observe(el); });
+
+      // Count up stats once, eased.
+      function countUp(el) {
+        var to = parseInt(el.getAttribute("data-to"), 10), start = null, dur = 1400;
+        function step(t) {
+          if (!start) start = t;
+          var p = Math.min((t - start) / dur, 1);
+          el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+          if (p < 1) requestAnimationFrame(step);
+        }
+        el.textContent = "0";
+        requestAnimationFrame(step);
+      }
+      var counters = document.querySelectorAll(".count[data-to]");
+      var countIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { countUp(en.target); countIO.unobserve(en.target); }
+        });
+      }, { threshold: 0.6 });
+      counters.forEach(function (el) { countIO.observe(el); });
+
+      // Parallax: hero image drifts at 25% of scroll while the hero is on screen.
+      var img = document.querySelector(".hero-media img");
+      var hero = document.querySelector(".hero");
+      var ticking = false;
+      function update() {
+        var y = window.scrollY;
+        if (y < hero.offsetHeight) img.style.setProperty("--parallax", (y * 0.25).toFixed(1) + "px");
+        ticking = false;
+      }
+      window.addEventListener("scroll", function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      }, { passive: true });
     })();
 
     // Active-section highlight in the nav.
