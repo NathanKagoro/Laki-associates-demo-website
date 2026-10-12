@@ -179,7 +179,7 @@ body {
   inset: 0;
   background:
     linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.65)),
-    url("./headliner.jpg") center bottom / cover no-repeat;
+    url("./Headliner.jpg") center bottom / cover no-repeat;
   filter: grayscale(100%);
   width: 780px;
   height: 800px;
