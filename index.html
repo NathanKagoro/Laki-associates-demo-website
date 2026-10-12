@@ -56,7 +56,16 @@
     </div>
 
     <div class="hero-right">
-      <div class="hero-image"></div>
+      <div class="hero-image">
+        <picture>
+          <source type="image/webp"
+                  srcset="assets/img/hero-800.webp 800w, assets/img/hero-1600.webp 1600w"
+                  sizes="(max-width: 1100px) 100vw, 50vw" />
+          <img src="assets/img/hero-1200.jpg" width="1200" height="1200"
+               alt="Aerial black-and-white view of a city intersection lined with office blocks"
+               fetchpriority="high" decoding="async" />
+        </picture>
+      </div>
     </div>
   </section>
 
